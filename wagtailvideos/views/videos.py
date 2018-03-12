@@ -6,12 +6,12 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.translation import ugettext as _
 from django.views.decorators.vary import vary_on_headers
 from wagtail.utils.pagination import paginate
-from wagtail.wagtailadmin import messages
-from wagtail.wagtailadmin.forms import SearchForm
-from wagtail.wagtailadmin.utils import (
+from wagtail.admin import messages
+from wagtail.admin.forms import SearchForm
+from wagtail.admin.utils import (
     PermissionPolicyChecker, popular_tags_for_model)
-from wagtail.wagtailcore.models import Collection
-from wagtail.wagtailsearch.backends import get_search_backends
+from wagtail.core.models import Collection
+from wagtail.search.backends import get_search_backends
 
 from wagtailvideos import ffmpeg
 from wagtailvideos.forms import VideoTranscodeAdminForm, get_video_form
