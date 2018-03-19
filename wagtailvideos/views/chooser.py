@@ -2,7 +2,7 @@ from __future__ import absolute_import, print_function, unicode_literals
 
 import json
 
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.shortcuts import get_object_or_404, render
 from wagtail.utils.pagination import paginate
 from wagtail.admin.forms import SearchForm

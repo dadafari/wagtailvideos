@@ -14,7 +14,7 @@ from django.conf import settings
 from django.core.exceptions import SuspiciousFileOperation
 from django.core.files.base import ContentFile
 from django.core.files.temp import NamedTemporaryFile
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
 from django.db.models.signals import post_save, pre_delete
 from django.dispatch.dispatcher import receiver
@@ -367,7 +367,7 @@ class AbstractVideoTranscode(models.Model):
 
 
 class VideoTranscode(AbstractVideoTranscode):
-    video = models.ForeignKey(Video, related_name='transcodes')
+    video = models.ForeignKey(Video, related_name='transcodes', on_delete=models.CASCADE)
 
     class Meta:
         unique_together = (
